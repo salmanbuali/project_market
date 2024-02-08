@@ -5,13 +5,14 @@ const newItem = async (req, res) => {
   try {
     req.body.sold = false
     req.body.seller = req.user._id
-    await Item.create(req.body)
+    theNewReturenedItem = await Item.create(req.body)
     // needs to update user items
-
+    await User.updateOne(
+      { _id: req.user._id },
+      { $push: { items: theNewReturenedItem._id } }
+    )
     res.redirect("/items")
   } catch (err) {
-    // Typically some sort of validation error
-    console.log(err)
     res.render("error", { err })
   }
 }
