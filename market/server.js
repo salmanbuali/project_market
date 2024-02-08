@@ -5,8 +5,11 @@ var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 const session = require('express-session')
 const passport = require('passport')
+const methodOverride = require('method-override')
+
 require('dotenv').config()
 require('./config/database')
+require('./config/passport');
 
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
@@ -34,6 +37,12 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Custom middleware to add the req.user to every ejs template
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
