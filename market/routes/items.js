@@ -1,8 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', (req, res)=> {
+router.get('/show', (req, res) => {
+  res.render('items/show')
+} )
+
+router.get('/', (req, res) => {
   res.render('items/');
 });
+
+
 
 module.exports = router;

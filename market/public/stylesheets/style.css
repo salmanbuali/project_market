@@ -1,28 +1,31 @@
 @import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
-
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
 
 body {
-  padding: 20px;
+  padding: 10px;
   font: 14px 'Nunito Sans', sans-serif;
 }
 
-#logo{
+#logo {
   font-size: 48px;
   color: white;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
   text-decoration: none;
 }
 
 nav {
-  background-color: #10151D;
+  background-color: #10151d;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  border-radius: 15px;
 }
 
 nav > a:hover:not(.active) {
@@ -45,3 +48,28 @@ nav > a.active {
 .login img {
   height: 30px;
 }
+
+.avatar {
+  border-radius: 50px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.userProfileContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.showItemContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.showItemName{}
+.showItemSoldBy{}
+.showItemPrice{}
+.showItemAbout{}
