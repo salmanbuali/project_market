@@ -11,9 +11,9 @@ require('dotenv').config()
 require('./config/database')
 require('./config/passport');
 
-var indexRouter = require('./routes/index')
-var usersRouter = require('./routes/users')
-var itemsRouter = require('./routes/items')
+const indexRouter = require('./routes/index')
+const usersRouter = require('./routes/users')
+const itemsRouter = require('./routes/items')
 
 
 var app = express()

@@ -1,8 +1,47 @@
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 20px;
+  font: 14px 'Nunito Sans', sans-serif;
+}
+
+#logo{
+  font-size: 48px;
+  color: white;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+
+nav {
+  background-color: #10151D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+nav > a:hover:not(.active) {
+  color: white;
+  background-color: #424748;
+}
+
+nav > a.active {
+  color: white;
+  cursor: default;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
 }
