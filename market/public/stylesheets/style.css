@@ -62,14 +62,23 @@ nav > a.active {
   margin: 20px;
 }
 
-.showItemContainer{
+.showItemContainer {
   display: flex;
   justify-content: center;
   flex-direction: row;
   margin: 20px;
 }
 
-.showItemName{}
-.showItemSoldBy{}
-.showItemPrice{}
-.showItemAbout{}
+.showItemName {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.showItemSoldBy {
+  font-weight: bold;
+  font-size: 16px;
+}
+.showItemPrice {
+}
+.showItemAbout {
+}
