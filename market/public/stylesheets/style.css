@@ -9,6 +9,7 @@
 
 body {
   font: 14px 'Nunito Sans', sans-serif;
+  padding: 5px;
 }
 
 #logo {
@@ -107,12 +108,13 @@ nav > a.active {
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s ease-in-out; /* for hover effects */
+  transition: all 0.2s ease-in-out;
 }
 
 .buyItemButton {
   background-color: #007bff;
   color: #fff;
+  margin-top: 1vh;
 }
 
 .buyItemButton:hover {
@@ -124,9 +126,9 @@ nav > a.active {
 }
 
 .buyItemButton:hover .hidden-icon {
-  display: inline-block; 
+  display: inline-block;
 }
 
 .buyItemButton:hover .hide-buy-text {
-  display: none; 
+  display: none;
 }

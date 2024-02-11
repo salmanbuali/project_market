@@ -1,24 +1,54 @@
 <%- include('../partials/header') %>
 <div class="showItemContainer">
-  <img
-    class="itemShowImg"
-    src="<%= item.image %>"
-    alt="Item image"
-  />
+  <img class="itemShowImg" src="<%= item.image %>" alt="Item image" />
   <div>
-    <p class="showItemName">
-      <%= item.name %>
+    <p class="showItemName"><%= item.name %></p>
+    <p class="showItemSoldBy">
+      <i class="fi fi-bs-user"></i> <%= item.seller.name %>
     </p>
-    <p class="showItemSoldBy"><i class="fi fi-bs-user"></i> <%= item.seller.name %> </p>
-    <p class="showItemPrice"><i class="fi fi-bs-tags"></i> Price: <%= item.price %> </p>
+    <p class="showItemPrice">
+      <i class="fi fi-bs-tags"></i> Price:  BHD <%= item.price %>
+    </p>
     <p><i class="fi fi-sr-info"></i> About this item:</p>
-    <p class="showItemAbout">
-     <%= item.desc %>
-    </p>
-    <form action="/order/new">
-    <button class="buyItemButton">
-      <i class="fi fi-br-basket-shopping-simple hidden-icon"></i><span class="hide-buy-text">BUY</span> 
-    </button>
+    <p class="showItemAbout"><%= item.desc %></p>
+    <form action="/orders/new/<%= item._id %>" method="POST">
+      <div class="input-group quantity-selector">
+        <input
+          type="number"
+          id="inputQuantitySelector"
+          class="form-control"
+          aria-live="polite"
+          data-bs-step="counter"
+          name="qty"
+          value="1"
+          min="1"
+          max="<%= item.qty %>"
+          step="1"
+          data-bs-round="0"
+          aria-label="Quantity selector"
+          disabled
+        />
+        <button
+          type="button"
+          class="btn btn-icon btn-secondary"
+          aria-describedby="inputQuantitySelector"
+          data-bs-step="down"
+        >
+          <span class="visually-hidden">Step down</span>
+        </button>
+        <button
+          type="button"
+          class="btn btn-icon btn-secondary"
+          aria-describedby="inputQuantitySelector"
+          data-bs-step="up"
+        >
+          <span class="visually-hidden">Step up</span>
+        </button>
+      </div>
+      <button class="buyItemButton" type="submit">
+        <i class="fi fi-br-basket-shopping-simple hidden-icon"></i
+        ><span class="hide-buy-text">BUY </span>
+      </button>
     </form>
   </div>
 </div>
