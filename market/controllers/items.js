@@ -30,17 +30,18 @@ const index = async (req, res) => {
     let items = await Item.find()
     res.render("items/",{ items })
 
-  } catch (error) {
+  } catch (err) {
     res.render("error", { err })
   }
 }
 
 const show = async (req, res) => {
   try {
-    let item = await Item.findById('65c873af04271ac777f53f3a').populate('seller')
+    console.log(req.params.id)
+    const item = await Item.findById(req.params.id).populate('seller')
     res.render('items/show' , { item })
-  } catch (error) {
-    res.render("error", { err })
+  } catch (err) {
+    console.log(err)
   }
 }
 
