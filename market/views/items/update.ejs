@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<div class="showItemContainer">
+  <img
+    class="itemShowImg"
+    src="https://m.media-amazon.com/images/I/8189uwDnMkL._AC_SX679_.jpg"
+    alt="Item image"
+  />
+  <form action="/items/:id/update" method="POST">
+    <p class="showItemName">
+      name : <input type="text" name="name" value="<%= item.name %>" >
+    </p>
+    <p class="showItemPrice"><i class="fi fi-bs-tags"></i> price : <input type="text" name="price" value="<%= item.price %>" > </p>
+    <p><i class="fi fi-sr-info"></i> description:</p>
+    <p class="showItemAbout">
+      <input type="textbox" name="desc" value="<%= item.desc %>" >
+    </p>
+
+    <p >
+      the picture of the item <input type="textbox" name="image" value="<%= item.image %>" >
+    </p>
+    <button type="submit" ></button>
+  </form>
+</div>
+<%- include('../partials/footer') %>

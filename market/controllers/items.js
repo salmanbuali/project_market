@@ -3,7 +3,7 @@ const User = require("../models/user")
 
 const newItem = async (req, res) => {
   try {
-    if (req.user._id) {
+    if (req.user) {
       req.body.sold = false
       req.body.seller = req.user._id
       theNewReturenedItem = await Item.create(req.body)
@@ -14,8 +14,8 @@ const newItem = async (req, res) => {
       )
       res.redirect("/items")
     } else {
-      res.redirect("/items/new")
-      alert("you are not logged in")
+      let message = "you are not logged in"
+      res.redirect("/items/new?message=" + message)
     }
   } catch (err) {
     res.render("error", { err })
@@ -49,4 +49,25 @@ const index = async (req, res) => {
   }
 }
 
-module.exports = { newItem, createItemPage, index }
+const updatePage = async (req, res) => {
+  try {
+    if (req.user) {
+      let item = await Item.findOne({ _id: req.param._id })
+      if (req.user == item.seller) {
+        res.render("items/update", { item })
+      } else {
+        const message = "this item isn't yours!"
+        res.redirect("/items?message=" + message)
+      }
+    } else {
+      const message = "you are not logged in"
+      res.redirect("/items?message=" + message)
+    }
+  } catch (error) {
+    res.render("error", { err })
+  }
+}
+const updateItem = (req, res) => {
+  res.redirect("/items?message=" + message)
+}
+module.exports = { newItem, createItemPage, index, updatePage, updateItem }
