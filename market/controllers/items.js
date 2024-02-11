@@ -1,6 +1,6 @@
 const Item = require("../models/item")
 const User = require("../models/user")
-
+// const message = ""
 const newItem = async (req, res) => {
   try {
     if (req.user) {
@@ -40,11 +40,11 @@ const index = async (req, res) => {
   try {
     let items = await Item.find()
     let message = ""
-    if (req.query.message) {
+    if (req.query) {
       message = req.query.message
     }
     res.render("items/index", { items, message })
-  } catch (error) {
+  } catch (err) {
     res.render("error", { err })
   }
 }
@@ -52,8 +52,12 @@ const index = async (req, res) => {
 const updatePage = async (req, res) => {
   try {
     if (req.user) {
-      let item = await Item.findOne({ _id: req.param._id })
-      if (req.user == item.seller) {
+      // console.log(seller)
+      let item = await Item.findById(req.params.id)
+      console.log(req.user._id)
+      console.log(item.seller)
+      if (req.user._id == item.seller) {
+        //  ????????? why is they not the same
         res.render("items/update", { item })
       } else {
         const message = "this item isn't yours!"
@@ -63,11 +67,32 @@ const updatePage = async (req, res) => {
       const message = "you are not logged in"
       res.redirect("/items?message=" + message)
     }
-  } catch (error) {
+  } catch (err) {
     res.render("error", { err })
   }
 }
-const updateItem = (req, res) => {
+const updateItem = async (req, res) => {
+  try {
+    if (req.user) {
+      let item = await Item.findOne({ _id: req.param._id })
+      console.log(req.body)
+      if (req.user == item.seller) {
+        console.log(req.body)
+        await Item.updateOne({ _id: req.param._id }, req.body)
+        message = "item updated successfully!"
+        res.redirect(`/items?message=${message}&_method=PUT`)
+      } else {
+        const message = "this item isn't yours!"
+        res.redirect("/items?message=" + message)
+      }
+    } else {
+      const message = "you are not logged in"
+      res.redirect("/items?message=" + message)
+    }
+  } catch (err) {
+    res.render("error", { err })
+  }
+
   res.redirect("/items?message=" + message)
 }
 module.exports = { newItem, createItemPage, index, updatePage, updateItem }
