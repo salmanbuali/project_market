@@ -1,4 +1,10 @@
 <%- include('../partials/header') %> 
+<% if (message) { %>
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <%= message %>
+</div>
+<% }%>
 <p>
   <% items.forEach((item) => { %>
   <section>
