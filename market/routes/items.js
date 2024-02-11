@@ -2,9 +2,8 @@ var express = require("express")
 var router = express.Router()
 const itemsController = require("../controllers/items")
 
-router.get('/show', (req, res) => {
-  res.render('items/show')
-} )
+//router.get('/show/:id', itemsController.show)
+router.get('/show/65c873af04271ac777f53f3a', itemsController.show)
 
 router.get("/", itemsController.index)
 

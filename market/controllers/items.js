@@ -28,11 +28,20 @@ const createItemPage = async (req, res) => {
 const index = async (req, res) => {
   try {
     let items = await Item.find()
-    res.render("items/",{items})
+    res.render("items/",{ items })
 
   } catch (error) {
     res.render("error", { err })
   }
 }
 
-module.exports = { newItem, createItemPage, index }
+const show = async (req, res) => {
+  try {
+    let item = await Item.findById('65c873af04271ac777f53f3a').populate('seller')
+    res.render('items/show' , { item })
+  } catch (error) {
+    res.render("error", { err })
+  }
+}
+
+module.exports = { newItem, createItemPage, index, show}

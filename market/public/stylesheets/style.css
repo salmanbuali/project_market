@@ -67,6 +67,7 @@ nav > a.active {
 .showItemContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
   margin: 20px;
 }
@@ -91,10 +92,10 @@ nav > a.active {
 }
 
 .itemShowImg {
-  height: 500px;
-  width: 500px;
-  margin-right: 100px;
-  margin-left: 100px;
+  height: 40vh;
+  width: 35vw;
+  margin-right: 5vw;
+  /* margin-left: 100px; */
 }
 
 .buyItemButton {
