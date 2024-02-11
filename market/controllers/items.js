@@ -25,9 +25,11 @@ const createItemPage = async (req, res) => {
   }
 }
 
-const index = (req, res) => {
+const index = async (req, res) => {
   try {
-    res.render("items/")
+    let items = await Item.find()
+    res.render("items/",{items})
+
   } catch (error) {
     res.render("error", { err })
   }

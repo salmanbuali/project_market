@@ -1,12 +1,15 @@
 <%- include('../partials/header') %> 
 <p>
-<section>
-  <div>image: </div>
-  <div><%= item.image %></div>
-  <div>Name:</div>
-  <div><%= item.name %></div>
-  <div>Price: </div>
-  <div><%= item.price %></div>
-</section>
+  <% items.forEach((item) => { %>
+  <section>
+    <div>image: </div>
+    <div><img src="<%= item.image %>" alt="item image"></div>
+    <div>Name:</div>
+    <div><%= item.name %></div>
+    <div>Price: </div>
+    <div><%= item.price %></div>
+  </section>
 </p>
+
+<% }); %>
 <%- include('../partials/footer') %> 
