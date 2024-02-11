@@ -5,8 +5,9 @@
 @import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
 @import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
 @import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+
 body {
-  padding: 10px;
   font: 14px 'Nunito Sans', sans-serif;
 }
 
@@ -25,7 +26,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 30px;
   border-radius: 15px;
 }
 
@@ -97,5 +98,34 @@ nav > a.active {
 }
 
 .buyItemButton {
-  
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out; /* for hover effects */
+}
+
+.buyItemButton {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.buyItemButton:hover {
+  background-color: #014389;
+}
+
+.hidden-icon {
+  display: none;
+}
+
+.buyItemButton:hover .hidden-icon {
+  display: inline-block; 
+}
+
+.buyItemButton:hover .hide-buy-text {
+  display: none; 
 }
