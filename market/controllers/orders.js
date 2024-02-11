@@ -3,15 +3,18 @@ const User = require("../models/user")
 const Order = require("../models/order")
 
 const newOrder = async (req, res) => {
-  console.log(req.body.qty, req.params.id)
-  // qty, item id
+  console.log(req.body.qty, req.params.id, req.user._id)
+  // qty, item id, user
   try {
     let item = await Item.findById(req.params.id)
-    let newOrder = await Order.create()
-    newOrder.item = req.params.id
-    newOrder.qty = req.body.qty
-    newOrder.buyer = user._id
-    newOrder.seller = item.seller
+    let newOrder = await Order.create({
+    item: req.params.id,
+    qty: req.body.qty,
+    buyer: req.user._id,
+    seller: item.seller
+    })
+
+    
     newOrder.save()
     res.redirect("/items")
   } catch (err) {

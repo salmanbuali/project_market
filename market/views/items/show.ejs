@@ -7,10 +7,11 @@
       <i class="fi fi-bs-user"></i> <%= item.seller.name %>
     </p>
     <p class="showItemPrice">
-      <i class="fi fi-bs-tags"></i> Price:  BHD <%= item.price %>
+      <i class="fi fi-bs-tags"></i> Price: BHD <%= item.price %>
     </p>
     <p><i class="fi fi-sr-info"></i> About this item:</p>
     <p class="showItemAbout"><%= item.desc %></p>
+    <% if (!item.seller._id.equals(user._id)) { %>
     <form action="/orders/new/<%= item._id %>" method="POST">
       <div class="input-group quantity-selector">
         <input
@@ -26,7 +27,6 @@
           step="1"
           data-bs-round="0"
           aria-label="Quantity selector"
-          disabled
         />
         <button
           type="button"
@@ -45,11 +45,14 @@
           <span class="visually-hidden">Step up</span>
         </button>
       </div>
+
       <button class="buyItemButton" type="submit">
         <i class="fi fi-br-basket-shopping-simple hidden-icon"></i
         ><span class="hide-buy-text">BUY </span>
       </button>
+      <p><%= item.seller._id %> , <%= user._id %></p>
     </form>
+    <% } %>
   </div>
 </div>
 <%- include('../partials/footer') %>
