@@ -39,6 +39,7 @@ const createItemPage = async (req, res) => {
 const index = async (req, res) => {
   try {
     let items = await Item.find()
+
     let message = ""
     if (req.query) {
       message = req.query.message
@@ -67,6 +68,10 @@ const updatePage = async (req, res) => {
       const message = "you are not logged in"
       res.redirect("/items?message=" + message)
     }
+
+   
+
+
   } catch (err) {
     res.render("error", { err })
   }
@@ -93,6 +98,15 @@ const updateItem = async (req, res) => {
     res.render("error", { err })
   }
 
-  res.redirect("/items?message=" + message)
+const show = async (req, res) => {
+  try {
+    console.log(req.params.id)
+    const item = await Item.findById(req.params.id).populate('seller')
+    res.render('items/show' , { item })
+  } catch (err) {
+    console.log(err)
+  }
 }
-module.exports = { newItem, createItemPage, index, updatePage, updateItem }
+
+module.exports = { newItem, createItemPage, index, show}
+

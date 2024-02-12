@@ -2,16 +2,35 @@
 <html>
   <head>
     <title>MARKETPLACE</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/boosted@5.2.3/dist/css/orange-helvetica.min.css"
+      rel="stylesheet"
+      integrity="sha384-A0Qk1uKfS1i83/YuU13i2nx5pk79PkIfNFOVzTcjCMPGKIDj9Lqx9lJmV7cdBVQZ"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boosted@5.2.3/dist/css/boosted.min.css"
+      rel="stylesheet"
+      integrity="sha384-zYFw+mxKy6r9zpAc1NoGiYBfQmxfvg7ONEMr81WeU+WLPPaLC9QTrNGFJTBi3EIn"
+      crossorigin="anonymous"
+    />
+
+    <script src="javascripts/items-script.js" defer></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/boosted@5.2.3/dist/js/boosted.bundle.min.js" integrity="sha384-MANW37RG4MpFWPMCcNZBnvSobOkBpIGlbBkEzTtD4FbbOzJXbW8TddND1ak2lfsB" crossorigin="anonymous"></script>
   </head>
   <body>
+
     <nav>
       <a href="/items"> <i class="fi fi-rs-shop" id="logo"></i> </a>
       <% if (user) { %>
       <a href="/users/profile/<%= user._id %>">PROFILE</a>
       <a href="/logout">LOG OUT</a>
       <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"/></a>
+      <a href="/auth/google" class="login"
+        >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
+      /></a>
       <% } %>
     </nav>
 
