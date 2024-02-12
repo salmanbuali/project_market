@@ -9,6 +9,7 @@
 
 body {
   font: 14px 'Nunito Sans', sans-serif;
+  padding: 5px;
 }
 
 #logo {
@@ -67,6 +68,7 @@ nav > a.active {
 .showItemContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
   margin: 20px;
 }
@@ -91,10 +93,10 @@ nav > a.active {
 }
 
 .itemShowImg {
-  height: 500px;
-  width: 500px;
-  margin-right: 100px;
-  margin-left: 100px;
+  height: 40vh;
+  width: 35vw;
+  margin-right: 5vw;
+  /* margin-left: 100px; */
 }
 
 .buyItemButton {
@@ -106,12 +108,13 @@ nav > a.active {
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s ease-in-out; /* for hover effects */
+  transition: all 0.2s ease-in-out;
 }
 
 .buyItemButton {
   background-color: #007bff;
   color: #fff;
+  margin-top: 1vh;
 }
 
 .buyItemButton:hover {
@@ -123,7 +126,7 @@ nav > a.active {
 }
 
 .buyItemButton:hover .hidden-icon {
-  display: inline-block; 
+  display: inline-block;
 }
 
 .buyItemButton:hover .hide-buy-text {

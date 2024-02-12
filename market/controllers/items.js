@@ -28,11 +28,21 @@ const createItemPage = async (req, res) => {
 const index = async (req, res) => {
   try {
     let items = await Item.find()
-    res.render("items/",{items})
+    res.render("items/",{ items })
 
-  } catch (error) {
+  } catch (err) {
     res.render("error", { err })
   }
 }
 
-module.exports = { newItem, createItemPage, index }
+const show = async (req, res) => {
+  try {
+    console.log(req.params.id)
+    const item = await Item.findById(req.params.id).populate('seller')
+    res.render('items/show' , { item })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+module.exports = { newItem, createItemPage, index, show}
