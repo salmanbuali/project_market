@@ -2,10 +2,10 @@
 <div class="showItemContainer">
   <img
     class="itemShowImg"
-    src="https://m.media-amazon.com/images/I/8189uwDnMkL._AC_SX679_.jpg"
+    src="<%= item.image %>"
     alt="Item image"
   />
-  <form action="/items/:id?" method="POST">
+  <form action="/items/<%= item._id %>?_method=PUT" method="POST">
     <p class="showItemName">
       name : <input type="text" name="name" value="<%= item.name %>" >
     </p>

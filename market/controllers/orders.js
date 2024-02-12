@@ -13,8 +13,6 @@ const newOrder = async (req, res) => {
     buyer: req.user._id,
     seller: item.seller
     })
-
-    
     newOrder.save()
     res.redirect("/items")
   } catch (err) {
