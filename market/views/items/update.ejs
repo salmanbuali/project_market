@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+<div class="showItemContainer">
+  <img
+    class="itemShowImg"
+    src="<%= item.image %>"
+    alt="Item image"
+  />
+  <form action="/items/<%= item._id %>?_method=PUT" method="POST">
+    <p class="showItemName">
+      name : <input type="text" name="name" value="<%= item.name %>" >
+    </p>
+    <p class="showItemPrice"><i class="fi fi-bs-tags"></i> price : <input type="number" name="price" value="<%= item.price %>" > </p>
+    <p><i class="fi fi-sr-info"></i> description:</p>
+    <p class="showItemAbout">
+      <input type="textbox" name="desc" value="<%= item.desc %>" >
+    </p>
+    <p >
+      quantity <input type="number" name="qty" value="<%= item.qty %>" >
+    </p>
+    <p >
+      the picture of the item <input type="textbox" name="image" value="<%= item.image %>" >
+    </p>
+    <button type="submit" >update</button>
+  </form>
+</div>
+<%- include('../partials/footer') %>
