@@ -56,7 +56,7 @@ const updatePage = async (req, res) => {
       let item = await Item.findById(req.params.id)
       console.log(req.user._id)
       console.log(item.seller)
-      if (req.user._id == item.seller) {
+      if (req.user._id.equals(item.seller)) {
         //  ????????? why is they not the same
         res.render("items/update", { item })
       } else {
@@ -76,7 +76,7 @@ const updateItem = async (req, res) => {
     if (req.user) {
       let item = await Item.findOne({ _id: req.param._id })
       console.log(req.body)
-      if (req.user == item.seller) {
+      if (req.user.equals(item.seller)) {
         console.log(req.body)
         await Item.updateOne({ _id: req.param._id }, req.body)
         message = "item updated successfully!"
