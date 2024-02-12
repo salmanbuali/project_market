@@ -76,9 +76,9 @@ const updateItem = async (req, res) => {
   try {
     if (req.user) {
       let item = await Item.findOne({ _id: req.params.id })
-      console.log(req.body)
+      // console.log(req.body)
       if (req.user.equals(item.seller)) {
-        console.log(req.body)
+        // console.log(req.body)
         await Item.updateOne({ _id: req.params.id }, req.body)
         message = "item updated successfully!"
         res.redirect(`/items?message=${message}`)
@@ -97,11 +97,34 @@ const updateItem = async (req, res) => {
 
 const show = async (req, res) => {
   try {
-    console.log(req.params.id)
+    // console.log(req.params.id)
     const item = await Item.findById(req.params.id).populate("seller")
     res.render("items/show", { item })
   } catch (err) {
     console.log(err)
+  }
+}
+
+const deleteItem = async (req, res) => {
+  try {
+    if (req.user) {
+      let item = await Item.findOne({ _id: req.params.id })
+      // console.log(req.body)
+      if (req.user.equals(item.seller)) {
+        // console.log(req.body)
+        await Item.updateOne({ _id: req.params.id }, { qty: 0 })
+        message = "item deleted successfully!"
+        res.redirect(`/items?message=${message}`)
+      } else {
+        const message = "this item isn't yours!"
+        res.redirect("/items?message=" + message)
+      }
+    } else {
+      const message = "you are not logged in"
+      res.redirect("/items?message=" + message)
+    }
+  } catch (err) {
+    res.render("error", { err })
   }
 }
 
@@ -112,4 +135,5 @@ module.exports = {
   show,
   updateItem,
   updatePage,
+  deleteItem,
 }
