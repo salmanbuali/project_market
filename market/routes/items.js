@@ -17,5 +17,7 @@ router.get("/:id/update", itemsController.updatePage)
 router.put("/:id", itemsController.updateItem)
 // delete an item
 router.delete("/:id", itemsController.deleteItem)
+// search for an item
+router.get("/search", itemsController.search)
 
 module.exports = router

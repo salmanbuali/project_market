@@ -128,6 +128,16 @@ const deleteItem = async (req, res) => {
   }
 }
 
+const search = async (req, res) => {
+  try {
+    console.log(req.query.value)
+    let items = await Item.find({ name: { $regex: req.query.value } })
+    res.render("items/index", { items })
+  } catch (err) {
+    res.render("error", { err })
+  }
+}
+
 module.exports = {
   newItem,
   createItemPage,
@@ -136,4 +146,5 @@ module.exports = {
   updateItem,
   updatePage,
   deleteItem,
+  search,
 }
