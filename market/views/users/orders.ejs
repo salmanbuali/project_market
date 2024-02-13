@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<% if(user.orders.length <= 0) { %>
+  <div class="alert">
+    No Orders Yet :D
+  </div>
+<% } %>
+<div class="past-orders-container">
+  <% for(let i = 0; i < user.orders.length; i++) { %>
+  <div class="order-card">
+    <img src="<%= user.orders[i].item.image %>" alt="item image" />
+    <div class="order-info">
+      <p><%= user.orders[i].item.name %></p>
+      <span> Price: BHD <%= user.orders[i].price %> </span>
+      <span>Quantity: <%= user.orders[i].qty %></span>
+      <span>Total amount: BHD <%= Number(user.orders[i].price) *
+        Number(user.orders[i].qty) %>
+      </span>
+      <span>
+        Date placed: <%= user.orders[i].createdAt.toLocaleDateString('en-US', {
+        month: 'short', year: 'numeric' }) %>
+      </span>
+      <span> Buyer: <%= user.orders[i].buyer.name %> </span>
+      <span> Seller: <%= user.orders[i].seller.name %> </span>
+      <span> Order ID: <%= user.orders[i]._id %> </span>
+    </div>
+  </div>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>
