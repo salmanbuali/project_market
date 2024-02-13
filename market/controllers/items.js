@@ -12,7 +12,7 @@ const newItem = async (req, res) => {
         { _id: req.user._id },
         { $push: { items: theNewReturenedItem._id } }
       )
-      res.redirect("/items")
+      res.redirect(`/items/show/${theNewReturenedItem._id}`)
     } else {
       let message = "you are not logged in"
       res.redirect("/items/new?message=" + message)

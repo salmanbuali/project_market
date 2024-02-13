@@ -1,15 +1,14 @@
-@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css");
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap");
-@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css");
-@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css");
-@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css");
-@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css");
-@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css");
-@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css");
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
 
 body {
   font: 14px 'Nunito Sans', sans-serif;
-  padding: 5px;
 }
 
 #logo {
@@ -22,21 +21,22 @@ a {
   text-decoration: none;
 }
 
-nav {
+#header {
   background-color: #10151d;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
   border-radius: 15px;
+  margin: 5px;
 }
 
-nav > a:hover:not(.active) {
+#header > a:hover:not(.active) {
   color: white;
   background-color: #424748;
 }
 
-nav > a.active {
+#header > a.active {
   color: white;
   cursor: default;
 }
@@ -156,7 +156,6 @@ nav > a.active {
   color: black;
 }
 
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -164,7 +163,7 @@ nav > a.active {
   grid-gap: 25px;
   margin: 50px 0; /* top margin, right & left margin */
   justify-content: center;
-  
+
   padding: 0 25px; /* horizontal padding */
 }
 
@@ -198,7 +197,7 @@ nav > a.active {
   font-size: 20px;
   text-align: left;
   padding-left: 10px;
-  color: #10151d; 
+  color: #10151d;
 }
 
 .price-font-main {
@@ -206,6 +205,56 @@ nav > a.active {
   font-size: 20px;
   text-align: left;
   padding-left: 10px;
-  color: black; 
+  color: black;
+}
 
+.past-orders-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3vh;
+  margin-top: 5vh;
+}
+
+.order-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  height: 20vh;
+  width: 80vw;
+  box-shadow: 0 3px 3px;
+  border-radius: 25px;
+}
+.order-info {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2vh;
+  padding-top: 10px;
+  margin-left: 2vw;
+}
+
+.order-info p {
+  font-size: 20px;
+}
+
+.order-card img {
+  height: 14vh;
+  width: 10vw;
+  border-radius: 15px;
+}
+
+#footer {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  background-color: #10151d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
 }

@@ -1,2 +1,16 @@
 </body>
+<nav id="footer">
+  <a href="/items"> <i class="fi fi-rs-shop" id="logo"></i> </a>
+  <% if (user) { %>
+  <a href="/users/profile/<%= user._id %>">PROFILE</a>
+  <a href="/users/orders/<%= user._id %>">ORDERS</a>
+  <a href="/items/new">ADD AN ITEM</a>
+  <a href="/logout">LOG OUT</a>
+  <% } else { %>
+  <a href="/auth/google" class="login"
+    >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
+  /></a>
+  <% } %>
+</nav>
 </html>
+

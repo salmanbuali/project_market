@@ -11,7 +11,8 @@
     </p>
     <p><i class="fi fi-sr-info"></i> About this item:</p>
     <p class="showItemAbout"><%= item.desc %></p>
-    <% if (!item.seller._id.equals(user._id) || !user._id) { %>
+    <% if (user) { %>
+      <% if (!item.seller._id.equals(user._id)){ %>
     <form action="/orders/new/<%= item._id %>" method="POST">
       <div class="input-group quantity-selector">
         <input
@@ -51,6 +52,7 @@
         ><span class="hide-buy-text">BUY </span>
       </button>
     </form>
+      <% } %>
     <% } %>
   </div>
 </div>

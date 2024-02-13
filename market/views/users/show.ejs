@@ -1,15 +1,16 @@
 <%- include('../partials/header') %>
+
 <div class="userProfileContainer">
   <img class="avatar" src="<%= user.avatar %>" alt="user avatar" />
   <div>
-    <p> <i class="fi fi-bs-user"></i> <%= user.name %></p>
-    <p> <i class="fi fi-bs-envelope"></i> <%= user.email %> </p>
-    <p> <i class="fi fi-sr-user-time"></i>
+    <p><i class="fi fi-bs-user"></i> <%= user.name %></p>
+    <p><i class="fi fi-bs-envelope"></i> <%= user.email %></p>
+    <p>
+      <i class="fi fi-sr-user-time"></i>
       User since <%= user.createdAt.toLocaleDateString('en-US', { month:
       'short', year: 'numeric' }) %>
     </p>
   </div>
 </div>
-
 
 <%- include('../partials/footer') %>
