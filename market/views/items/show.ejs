@@ -54,11 +54,44 @@
     </form>
       <% } %>
     <% } %>
-          <!-- delete button -->
-          <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
-            <button type="submit">delete!</button>
-            </form>
-            <!-- end of delete button  -->
+         
   </div>
 </div>
+
+
+
+
+<br><br><h2></h2>
+<% if (comments.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% comments.forEach((comment) => { %>
+        <tr>
+          <td><%= comment.comment %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Comment Yet</h5>
+<% } %>
+
+
+
+
+<form id="add-comment-form" 
+  action="/items/show/<%= item._id %>"
+  method="POST"
+  >
+  <label>Comment:</label>
+  <textarea name="comment"></textarea>
+  <input type="submit" value="Add Comment">
+</form>
+</main>
+
 <%- include('../partials/footer') %>
