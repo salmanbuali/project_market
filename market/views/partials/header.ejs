@@ -18,10 +18,15 @@
 
     <script src="javascripts/items-script.js" defer></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/boosted@5.2.3/dist/js/boosted.bundle.min.js" integrity="sha384-MANW37RG4MpFWPMCcNZBnvSobOkBpIGlbBkEzTtD4FbbOzJXbW8TddND1ak2lfsB" crossorigin="anonymous"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/boosted@5.2.3/dist/js/boosted.bundle.min.js"
+      integrity="sha384-MANW37RG4MpFWPMCcNZBnvSobOkBpIGlbBkEzTtD4FbbOzJXbW8TddND1ak2lfsB"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-
+    <div id="main">
     <nav id="header">
       <a href="/items"> <i class="fi fi-rs-shop" id="logo"></i> </a>
       <% if (user) { %>
@@ -36,10 +41,13 @@
       <% } %>
     </nav>
 
-    <% if (typeof message !== 'undefined') { //typeof message!=='undefined' &&  %> 
-      <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <%= message %>
-      </div>
-      <% }%>
-
+    <% if (typeof message !== 'undefined') { //typeof message!=='undefined' &&
+    %>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';"
+        >&times;</span>
+      <%= message %>
+    </div>
+    <% }%>
+  </body>
+</html>

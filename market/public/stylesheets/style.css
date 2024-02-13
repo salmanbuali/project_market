@@ -9,6 +9,8 @@
 
 body {
   font: 14px 'Nunito Sans', sans-serif;
+  /* background-color: red; */
+  /* height: 200px; */
 }
 
 #logo {
@@ -29,6 +31,7 @@ a {
   padding: 10px 30px;
   border-radius: 15px;
   margin: 5px;
+  height: 10vh;
 }
 
 #header > a:hover:not(.active) {
@@ -63,6 +66,8 @@ a {
   justify-content: center;
   flex-direction: row;
   margin: 20px;
+
+  /* background-color: aqua; */
 }
 
 .showItemContainer {
@@ -216,7 +221,6 @@ a {
   gap: 3vh;
   margin-top: 5vh;
 }
-
 .order-card {
   display: flex;
   flex-direction: row;
@@ -237,24 +241,32 @@ a {
   padding-top: 10px;
   margin-left: 2vw;
 }
-
 .order-info p {
   font-size: 20px;
 }
-
 .order-card img {
   height: 14vh;
   width: 10vw;
   border-radius: 15px;
 }
-
 #footer {
-  position: fixed;
+  height: 10vh;
   width: 100vw;
-  bottom: 0;
   background-color: #10151d;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px 30px;
+  margin-top: 15px;
+}
+#main {
+  min-height: 90vh;
+}
+.footer-names-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.footer-names {
+  color: white;
 }
