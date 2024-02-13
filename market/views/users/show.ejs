@@ -15,20 +15,25 @@
 
 <title>My Store</title>
 <p>
-  <% for (let i = 0; i < items.length; i += 7) { %>
-    <section class="row">
-      <% for (let j = i; j < i + 7; j++) { %>
-        <% if (j < items.length) { %>
-          <a href='/items/show/<%= items[j]._id %>' class="white-container" id="item-div">
-            <div><img src="<%= items[j].image %>" alt="item image" class="centered-image"></div>
-            <div class="item-font-main"><%= items[j].name %></div>
-            <div class="price-font-main"><%= items[j].price %></div>
-          </a>
-          <a href="/items/<%= items[j]._id %>/update" ><button >test </button></a>
-          
+  <section class="row">
+    <% for (let j = 0; j < items.length ; j++) { %>
+      <% if (j < items.length) { %>
+        <% if (items[j].qty > 0) { %>
+        <a href='/items/show/<%= items[j]._id %>' class="white-container" id="item-div">
+          <div><img src="<%= items[j].image %>" alt="item image" class="centered-image"></div>
+          <div class="item-font-main"><%= items[j].name %></div>
+          <div class="price-font-main"><%= items[j].price %></div>
+        </a>
+        <a href="/items/<%= items[j]._id %>/update" ><button >test </button></a>
         <% } %>
       <% } %>
-    </section>
-  <% } %>
+    <% } %>
+  </section>
 </p>
+
+
+
 <%- include('../partials/footer') %>
+
+
+
