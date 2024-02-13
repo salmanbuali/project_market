@@ -83,7 +83,7 @@
 
 
 
-
+<% if (user) { %>
 <form id="add-comment-form" 
   action="/items/show/<%= item._id %>"
   method="POST"
@@ -92,6 +92,7 @@
   <textarea name="comment"></textarea>
   <input type="submit" value="Add Comment">
 </form>
+<% } %>
 </main>
 
 <%- include('../partials/footer') %>
