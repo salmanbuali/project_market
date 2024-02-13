@@ -1,14 +1,14 @@
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css");
 
 body {
-  font: 14px 'Nunito Sans', sans-serif;
+  font: 14px "Nunito Sans", sans-serif;
 }
 
 #logo {
@@ -257,4 +257,26 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
+}
+
+.search-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  margin: 5px;
+  text-align: center;
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+  /* border: ; */
+  border-radius: 23px;
+  border: 1px solid #dfdfdf;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.search:hover {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
 }
