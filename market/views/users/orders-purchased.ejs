@@ -1,24 +1,35 @@
 <%- include('../partials/header') %>
-  <div>
-    <a href="/users/orders/<%= user._id %>"><button class="orders-btn">All orders</button></a> 
-    <a href="/users/orders/sold/<%= user._id %>"><button class="orders-btn">Sold Items</button></a> 
-    <a href="/users/orders/purchased/<%= user._id %>"><button class="orders-btn">Purchased Items</button></a> 
-  </div>
+<div class="orders-btn-div">
+  <a href="/users/orders/<%= user._id %>"
+    ><button class="orders-btn">
+      <i class="fi fi-bs-list"></i> All orders
+    </button></a
+  >
+  <a href="/users/orders/sold/<%= user._id %>"
+    ><button class="orders-btn">
+      <i class="fi fi-rr-sack-dollar"></i> Sold Items
+    </button></a
+  >
+  <a href="/users/orders/purchased/<%= user._id %>"
+    ><button class="orders-btn">
+      <i class="fi fi-rs-cart-arrow-down"></i> Purchased Items
+    </button></a
+  >
+</div>
 <% if(user.orders.length <= 0) { %>
-  <div class="alert">
-    No Orders Yet :D
-  </div>
+<div class="alert">No Orders Yet :D</div>
 <% } %>
 <div class="past-orders-container">
-  <% for(let i = 0; i < user.orders.length; i++) { %>
-    <% if(!user.orders[i].seller._id.equals(user._id)) { %>
+  <% for(let i = 0; i < user.orders.length; i++) { %> <%
+  if(!user.orders[i].seller._id.equals(user._id)) { %>
   <div class="order-card">
     <img src="<%= user.orders[i].item.image %>" alt="item image" />
     <div class="order-info">
       <p><%= user.orders[i].item.name %></p>
       <span> Price: BHD <%= user.orders[i].price %> </span>
       <span>Quantity: <%= user.orders[i].qty %></span>
-      <span>Total amount: BHD <%= Number(user.orders[i].price) *
+      <span
+        >Total amount: BHD <%= Number(user.orders[i].price) *
         Number(user.orders[i].qty) %>
       </span>
       <span>
@@ -30,8 +41,7 @@
       <span> Order ID: <%= user.orders[i]._id %> </span>
     </div>
   </div>
-      <% } %>
-  <% } %>
+  <% } %> <% } %>
 </div>
 
 <%- include('../partials/footer') %>

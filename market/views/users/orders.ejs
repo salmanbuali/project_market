@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
-  <div>
-    <a href="/users/orders/<%= user._id %>"><button>All orders</button></a> 
-    <a href="/users/orders/sold/<%= user._id %>"><button>Sold Items</button></a> 
-    <a href="/users/orders/purchased/<%= user._id %>"><button>Purchased Items</button></a>
+  <div class="orders-btn-div">
+    <a href="/users/orders/<%= user._id %>"><button class="orders-btn"> <i class="fi fi-bs-list"></i> All orders</button></a> 
+    <a href="/users/orders/sold/<%= user._id %>"><button class="orders-btn"> <i class="fi fi-rr-sack-dollar"></i> Sold Items</button></a> 
+    <a href="/users/orders/purchased/<%= user._id %>"><button class="orders-btn"> <i class="fi fi-rs-cart-arrow-down"></i> Purchased Items</button></a>
   </div>
 <% if(user.orders.length <= 0) { %>
   <div class="alert">
