@@ -2,7 +2,7 @@
   <div>
     <a href="/users/orders/<%= user._id %>"><button>All orders</button></a> 
     <a href="/users/orders/sold/<%= user._id %>"><button>Sold Items</button></a> 
-    <a href="/users/orders/purchased/<%= user._id %>"><button>Purchased Items</button></a>
+    <a href="/users/orders/purchased/<%= user._id %>"><button>Purchased Items</button></a> 
   </div>
 <% if(user.orders.length <= 0) { %>
   <div class="alert">
@@ -11,6 +11,7 @@
 <% } %>
 <div class="past-orders-container">
   <% for(let i = 0; i < user.orders.length; i++) { %>
+    <% if(user.orders[i].seller._id.equals(user._id)) { %>
   <div class="order-card">
     <img src="<%= user.orders[i].item.image %>" alt="item image" />
     <div class="order-info">
@@ -29,6 +30,7 @@
       <span> Order ID: <%= user.orders[i]._id %> </span>
     </div>
   </div>
+      <% } %>
   <% } %>
 </div>
 
