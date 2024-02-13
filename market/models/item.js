@@ -10,6 +10,7 @@ const itemSchema = new Schema(
     sold: { type: Boolean, required: true, default: false },
     qty: { type: Number, required: true },
     seller: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
   },
   {
     timestamps: true,
