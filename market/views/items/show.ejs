@@ -54,6 +54,11 @@
     </form>
       <% } %>
     <% } %>
+          <!-- delete button -->
+          <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
+            <button type="submit">delete!</button>
+            </form>
+            <!-- end of delete button  -->
   </div>
 </div>
 <%- include('../partials/footer') %>
