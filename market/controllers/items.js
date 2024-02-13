@@ -1,5 +1,6 @@
 const Item = require("../models/item")
 const User = require("../models/user")
+const Comment = require("../models/comment")
 // const message = ""
 const newItem = async (req, res) => {
   try {
@@ -99,7 +100,9 @@ const show = async (req, res) => {
   try {
     // console.log(req.params.id)
     const item = await Item.findById(req.params.id).populate("seller")
-    res.render("items/show", { item })
+    const comments = await Comment.find({itemId: item._id})
+    res.render("items/show", { item, comments })
+
   } catch (err) {
     console.log(err)
   }
