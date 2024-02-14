@@ -93,7 +93,7 @@ const updateItem = async (req, res) => {
       if (req.user.equals(item.seller)) {
         // console.log(req.body)
         await Item.updateOne({ _id: req.params.id }, req.body)
-        message = "item updated successfully!"
+        const message = "item updated successfully!"
         res.redirect(`/items?message=${message}`)
       } else {
         const message = "this item isn't yours!"
@@ -126,7 +126,7 @@ const deleteItem = async (req, res) => {
       if (req.user.equals(item.seller)) {
         // console.log(req.body)
         await Item.updateOne({ _id: req.params.id }, { qty: 0 })
-        message = "item deleted successfully!"
+        const message = "item deleted successfully!"
         res.redirect(`/items?message=${message}`)
       } else {
         const message = "this item isn't yours!"
