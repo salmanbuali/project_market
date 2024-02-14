@@ -1,36 +1,44 @@
 <%- include('../partials/header') %>
 
 <div class="userProfileContainer">
-  <img class="avatar" src="<%= user.avatar %>" alt="user avatar" />
+  <img class="avatar" src="<%= profile.avatar %>" alt="user avatar" />
   <div>
-    <p><i class="fi fi-bs-user"></i> <%= user.name %></p>
-    <p><i class="fi fi-bs-envelope"></i> <%= user.email %></p>
+    <p><i class="fi fi-bs-user"></i> <%= profile.name %></p>
+    <p><i class="fi fi-bs-envelope"></i> <%= profile.email %></p>
     <p>
       <i class="fi fi-sr-user-time"></i>
-      User since <%= user.createdAt.toLocaleDateString('en-US', { month:
+      User since <%= profile.createdAt.toLocaleDateString('en-US', { month:
       'short', year: 'numeric' }) %>
     </p>
   </div>
 </div>
-
-<title>My Store</title>
 <p>
   <% for (let i = 0; i < items.length; i += 4) { %>
     <section class="row">
       <% for (let j = i; j < i + 4; j++) { %>
         <% if (j < items.length) { %>
+          <% if(items[j].qty > 0) { %>
           <div class="white-container">
             <a href='/items/show/<%= items[j]._id %>' id="item-div">
               <div><img src="<%= items[j].image %>" alt="item image" class="centered-image"></div>
               <div class="text-container">
               <div class="item-font-main"><%= items[j].name %></div>
-              <div class="price-font-main"><%= items[j].price %> <dive class="price-font-BHD ">BHD</dive></div>
-              <a href="/items/<%= items[j]._id %>/update" ><button class="update-btn"><i class="fi fi-br-edit"></i> UPDATE </button></a> 
+              <div class="price-font-main"><%= items[j].price %>
+              <span class="price-font-BHD ">BHD</span></div>
+
+
+              <!-- <a href="/items/<%= //items[j]._id %>/update" ><button class="update-btn"><i class="fi fi-br-edit"></i> UPDATE </button></a>  -->
+              <% if(user) { %>
+                <% if(user._id.equals(profile._id)){%>
+              <a href="/items/<%= items[j]._id %>/update" ><button class="update-btn"><i class="fi fi-br-edit"></i> UPDATE </button></a>
+              <% } %>
+              <% } %>
             </div>
-            </a>
-            
+            </a> 
           </div>
 
+       
+          <% } %>
         <% } %>
        <% } %>
      </section>

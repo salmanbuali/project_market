@@ -4,7 +4,7 @@
   <div>
     <p class="showItemName"><%= item.name %></p>
     <p class="showItemSoldBy">
-      <i class="fi fi-bs-user"></i> <%= item.seller.name %>
+      <i class="fi fi-bs-user"></i> <a href="/users/profile/<%= item.seller._id %>"><%= item.seller.name %></a>
     </p>
     <p class="showItemPrice">
       <i class="fi fi-bs-tags"></i> Price: BHD <%= item.price %>
@@ -75,7 +75,7 @@
         <% comments.forEach((comment) => { %>
           <tr>
             <td>
-              <div class="avatar">
+              <div class="avatar-comment">
                 <img src="<%= comment.userId.avatar %>" alt="avatar">
               </div>
               <div class="author-comment">
