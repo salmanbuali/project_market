@@ -61,30 +61,36 @@
 
 
 
-<br><br><h2></h2>
-<% if (comments.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>Comments</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% comments.forEach((comment) => { %>
-        <tr>
-        
-          <td><%= comment.userId.name %></td>
-          <td><img src="<%=  comment.userId.avatar %>" alt="avatar"> </td>
-          
-          <td><%= comment.comment %></td>
-        </tr>
-      <% }); %>
-    </tbody>
-  </table>
-<% } else { %>
-  <h5>No Comment Yet</h5>
-<% } %>
+<div class="comment-section">
+  <h2></h2>
 
+  <% if (comments.length) { %>
+    <table class="comment-table">
+      <thead>
+        <tr>
+          <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% comments.forEach((comment) => { %>
+          <tr>
+            <td>
+              <div class="avatar">
+                <img src="<%= comment.userId.avatar %>" alt="avatar">
+              </div>
+              <div class="author-comment"> <!-- Added -->
+                <p><strong><%= comment.userId.name %></strong></p>
+                <p><%= comment.comment %></p>
+              </div>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5 id="no-comment">No Comment Yet</h5>
+  <% } %>
+</div>
 
 
 <% if (user) { %>
@@ -92,7 +98,7 @@
   action="/items/show/<%= item._id %>"
   method="POST"
   >
- 
+
   <label>Comment:</label>
   <textarea name="comment"></textarea>
   <input type="submit" value="Add Comment">
