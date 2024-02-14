@@ -484,8 +484,10 @@ a {
 }
 
 .avatar-comment {
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
   background-size: cover;
   border-radius: 50%;
   overflow: hidden;
@@ -567,12 +569,6 @@ a {
   padding-top: 2vh;
 }
 
-/* #update-form input {
-  border-radius: 20px;
-  border: 1px solid;
-  padding: 5px;
-} */
-
 #update-form {
   width: 40vw;
   margin: 0 auto;
@@ -635,4 +631,21 @@ a {
 #header-logo {
   height: 60px;
   width: 240px;
+}
+
+.delete-btn {
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #10151d;
+  color: white;
+}
+
+.td-comment {
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar-author-div {
+  display: flex;
+  flex-direction: row;
 }
