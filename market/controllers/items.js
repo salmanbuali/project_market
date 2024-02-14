@@ -48,7 +48,7 @@ const index = async (req, res) => {
     // if (res.locals.pricing) {
     // highToLow = res.locals.pricing
     // }
-    console.log(highToLow)
+    // console.log(highToLow)
     let items = await Item.find({
       name: { $regex: search },
     }).sort({ price: 1 })
