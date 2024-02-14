@@ -1,12 +1,12 @@
 <%-include('../partials/header') %> 
-
 <title>Store</title>
 <div >
-<form class="search-div" action="/items" method="get"><input class="search" name="value" type="text" placeholder="search">
+<form class="search-div" action="/items" method="get">
+  <input class="search" name="value" type="text" placeholder="search">
   <button class="search search-button" type="submit">search</button>
 </form>
 <div>
-  <form action="/items" method="get" >
+  <form action="/items/filter" class="search-div" method="get" >
     <input class="search" type="text" name="filterVal" placeholder="price less than">
     <button type="submit" class="search search-button">Filter</button>
   </form>
