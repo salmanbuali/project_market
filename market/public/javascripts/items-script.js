@@ -1,5 +1,5 @@
 const itemDiv = document.querySelectorAll("#white-container")
-
+let highToLow = 1
 /*addEventListener('click',()=> {
   window.location.href = '/items/new'
 })*/

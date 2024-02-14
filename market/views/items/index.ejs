@@ -1,8 +1,20 @@
 <%-include('../partials/header') %> 
+
 <title>Store</title>
-<form class="search-div" action="/items/search" method="get"><input class="search" name="value" type="text" placeholder="search">
+<div >
+<form class="search-div" action="/items" method="get"><input class="search" name="value" type="text" placeholder="search">
   <button class="search search-button" type="submit">search</button>
 </form>
+<Form  class="search-div" action="/items/price" method="get">
+  <select class="search search-button" name="pricing">
+    <option  value="1">high to low</option>
+    <option  value="-1">low to high</option>
+  </select>
+  <button class="search search-button" type="submit">change price</button>
+</Form>
+</div>
+
+
 <p>
     <section class="row">
       <% for (let j = 0; j < items.length ; j++) { %>

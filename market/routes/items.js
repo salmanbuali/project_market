@@ -18,6 +18,8 @@ router.put("/:id", itemsController.updateItem)
 // delete an item
 router.delete("/:id", itemsController.deleteItem)
 // search for an item
-router.get("/search", itemsController.search)
+// router.get("/search", itemsController.search)
+// change the pricing
+router.get("/price", itemsController.changePricing)
 
 module.exports = router

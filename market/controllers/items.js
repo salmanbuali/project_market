@@ -1,6 +1,7 @@
 const Item = require("../models/item")
 const User = require("../models/user")
-// const message = ""
+// let highToLow = 1
+
 const newItem = async (req, res) => {
   try {
     if (req.user) {
@@ -38,7 +39,19 @@ const createItemPage = async (req, res) => {
 
 const index = async (req, res) => {
   try {
-    let items = await Item.find()
+    let search = ""
+    if (req.query.value) {
+      search = req.query.value
+    }
+
+    // let highToLow = 1
+    // if (res.locals.pricing) {
+    // highToLow = res.locals.pricing
+    // }
+    console.log(highToLow)
+    let items = await Item.find({
+      name: { $regex: search },
+    }).sort({ price: 1 })
 
     let message = ""
     if (req.query) {
@@ -128,14 +141,23 @@ const deleteItem = async (req, res) => {
   }
 }
 
-const search = async (req, res) => {
-  try {
-    console.log(req.query.value)
-    let items = await Item.find({ name: { $regex: req.query.value } })
-    res.render("items/index", { items })
-  } catch (err) {
-    res.render("error", { err })
-  }
+// const search = async (req, res) => {
+//   try {
+//     console.log(req.query.value)
+//     let items = await Item.find({ name: { $regex: req.query.value } })
+//     res.render("items/index", { items })
+//   } catch (err) {
+//     res.render("error", { err })
+//   }
+// }
+
+// change price
+const changePricing = async (req, res) => {
+  // res.locals.pricing = req.query.pricing
+  // console.log(res.locals.pricing)
+  // const items = await Item.aggregate([{ $sort: { price: +req.query.pricing } }])
+  // console.log(window.location.href)
+  res.redirect("/items")
 }
 
 module.exports = {
@@ -146,5 +168,6 @@ module.exports = {
   updateItem,
   updatePage,
   deleteItem,
-  search,
+  // search,
+  changePricing,
 }
