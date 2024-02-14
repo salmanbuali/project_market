@@ -1,19 +1,19 @@
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css");
 
 body {
-  font: 14px 'avenir next', sans-serif;
+  font: 14px "avenir next", sans-serif;
 }
 
 #logo {
@@ -35,7 +35,7 @@ a {
   border-radius: 0px;
   height: 10vh;
   margin-top: 0px;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 
 #header > a:hover:not(.active) {
@@ -144,7 +144,8 @@ a {
   background-color: orange;
   color: white;
   border-radius: 15px;
-  margin: 15px 0px;
+  margin: 15px;
+  justify-content: space-between;
 }
 
 .closebtn {
@@ -318,7 +319,7 @@ a {
 }
 #footer {
   height: 10vh;
-  width: 100vw;
+  width: 100%;
   background-color: #10151d;
   display: flex;
   justify-content: center;
@@ -378,8 +379,8 @@ a {
   margin-bottom: 5px;
 }
 
-#item-form-container input[type='text'],
-#item-form-container input[type='number'] {
+#item-form-container input[type="text"],
+#item-form-container input[type="number"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -387,7 +388,7 @@ a {
   border-radius: 5px;
 }
 
-#item-form-container button[type='submit'] {
+#item-form-container button[type="submit"] {
   background-color: #10151d;
   color: #fff;
   border: none;
@@ -398,7 +399,7 @@ a {
   border-radius: 15px;
 }
 
-#item-form-container button[type='submit']:hover {
+#item-form-container button[type="submit"]:hover {
   background-color: #2d428f;
 }
 
@@ -420,7 +421,7 @@ a {
   text-align: left;
 }
 
-#add-comment-form textarea[name='comment'] {
+#add-comment-form textarea[name="comment"] {
   width: 100%;
   height: 100px;
   max-width: 400px;
@@ -430,7 +431,7 @@ a {
   resize: vertical;
 }
 
-#add-comment-form input[type='submit'] {
+#add-comment-form input[type="submit"] {
   background-color: #10151d;
   color: #fff;
   border: none;
@@ -441,7 +442,7 @@ a {
   margin-top: 10px;
 }
 
-#add-comment-form input[type='submit']:hover {
+#add-comment-form input[type="submit"]:hover {
   background-color: #2d428f;
 }
 
@@ -588,9 +589,9 @@ a {
   margin-bottom: 5px;
 }
 
-#update-form input[type='text'],
-#update-form input[type='number'],
-#update-form input[type='textbox'] {
+#update-form input[type="text"],
+#update-form input[type="number"],
+#update-form input[type="textbox"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -598,7 +599,7 @@ a {
   border-radius: 5px;
 }
 
-#update-form button[type='submit'] {
+#update-form button[type="submit"] {
   background-color: #10151d;
   color: #fff;
   border: none;
@@ -609,14 +610,13 @@ a {
   border-radius: 15px;
 }
 
-#update-form button[type='submit']:hover {
+#update-form button[type="submit"]:hover {
   background-color: #2d428f;
 }
 
 .update-form-img {
-  height: 25vh;
-  width: 25vw;
-  /* margin-right: 2vw; */
+  height: 40vh;
+  margin-right: 15px;
 }
 
 .updateItemContainer {

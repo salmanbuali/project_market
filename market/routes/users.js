@@ -1,18 +1,13 @@
-var express = require('express')
+var express = require("express")
 var router = express.Router()
-const usersCtrl = require('../controllers/users')
-
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource')
-})
-
-router.get('/profile/:id', usersCtrl.show)
-
-router.get('/orders/sold/:id', usersCtrl.showSold)
-
-router.get('/orders/purchased/:id', usersCtrl.showPurchased)
-
-router.get('/orders/:id', usersCtrl.showOrders)
+const usersCtrl = require("../controllers/users")
+// show user profile
+router.get("/profile/:id", usersCtrl.show)
+// show sold items
+router.get("/orders/sold/:id", usersCtrl.showSold)
+// show purchased items
+router.get("/orders/purchased/:id", usersCtrl.showPurchased)
+// show all orders
+router.get("/orders/:id", usersCtrl.showOrders)
 
 module.exports = router

@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+
 <div class="showItemContainer">
   <img class="itemShowImg" src="<%= item.image %>" alt="Item image" />
   <div>
@@ -46,7 +47,6 @@
           <span class="visually-hidden">Step up</span>
         </button>
       </div>
-
       <button class="buyItemButton" type="submit">
         <i class="fi fi-br-basket-shopping-simple hidden-icon"></i
         ><span class="hide-buy-text">BUY </span>
@@ -54,16 +54,11 @@
     </form>
       <% } %>
     <% } %>
-         
   </div>
 </div>
 
-
-
-
 <div class="comment-section" id="add-comment-form" >
   <h2></h2>
-
   <% if (comments.length) { %>
     <table class="comment-table">
       <thead>
@@ -93,11 +88,6 @@
                 <% }} %>
               </div> 
             </td>
-            
-            <!-- <td>
-              
-            </td> -->
-              
           </tr>
         <% }); %>
       </tbody>
@@ -107,18 +97,15 @@
   <% } %>
 </div>
 
-
 <% if (user) { %>
 <form id="add-comment-form" 
   action="/items/show/<%= item._id %>"
   method="POST"
   >
-
   <label>Comment:</label>
   <textarea name="comment"></textarea>
   <input type="submit" value="Add Comment">
 </form>
 <% } %>
-</main>
 
 <%- include('../partials/footer') %>

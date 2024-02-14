@@ -1,59 +1,36 @@
 <%-include('../partials/header') %> 
 <title>Store</title>
 <div>
-<form class="search-div" action="/items" method="get">
-  <input class="search" name="value" type="text" placeholder="search">
-  <button class="search search-button" type="submit">search</button>
-</form>
-<form action="/items/filter" class="search-div" method="get" >
-  <input class="search" type="text" name="filterVal" placeholder="price less than">
-  <button type="submit" class="search search-button">Filter</button>
-</form>
-<div class="search-div">
-  <button class="search search-button" onclick="lowToHigh()">Low To High</button>
-  <button class="search search-button" onclick="highToLow()">High To Low</button>
-</div>
+  <form class="search-div" action="/items" method="get">
+    <input class="search" name="value" type="text" placeholder="search">
+    <button class="search search-button" type="submit">search</button>
+  </form>
+  <form action="/items/filter" class="search-div" method="get" >
+    <input class="search" type="text" name="filterVal" placeholder="price less than">
+    <button type="submit" class="search search-button">Filter</button>
+  </form>
+  <div class="search-div">
+    <button class="search search-button" onclick="lowToHigh()">Low To High</button>
+    <button class="search search-button" onclick="highToLow()">High To Low</button>
+  </div>
 </div>
 
-<p >
-    <section class="row">
-      <% for (let j = 0; j < items.length ; j++) { %>
-        <% if (j < items.length) { %>
-          <% if (items[j].qty > 0) { %>
-          <a href='/items/show/<%= items[j]._id %>' class="Index-white-container" id="item-div">
-            <div ><img src="<%= items[j].image %>" alt="item image" class="centered-image"></div>
-            <div class="text-container">
+
+<section class="row">
+  <% for (let j = 0; j < items.length ; j++) { %>
+    <% if (j < items.length) { %>
+      <% if (items[j].qty > 0) { %>
+        <a href='/items/show/<%= items[j]._id %>' class="Index-white-container" id="item-div">
+          <div ><img src="<%= items[j].image %>" alt="item image" class="centered-image"></div>
+          <div class="text-container">
             <div class="item-font-main"><%= items[j].name %></div>
             <div><span class="price-font-BHD">BHD</span><span class="price-font-main"><%= items[j].price %></span></div>
-            
-            </div>
-            
-          </a>
-          <% } %>
-        <% } %>
+          </div>
+        </a>
       <% } %>
-    </section>
-</p>
+    <% } %>
+  <% } %>
+</section>
 
 
 <%- include('../partials/footer') %> 
-
-<!-- 
-/* <title>Store</title>
-<p>
-  <%// for (let i = 0; i < items.length; i += 7) { %>
-    <section class="row">
-       <% // for (let j = i; j < i + 7; j++) { %>
-        <% // if (j < items.length) { %>
-          <%// if (!items[j].qty === 0) { %>
-          <a href='/items/show/<%=// items[j]._id %>' class="white-container" id="item-div">
-            <div><img src="<%=// items[j].image %>" alt="item image" class="centered-image"></div>
-            <div class="item-font-main"><%=// items[j].name %></div>
-            <div class="price-font-main"><%=// items[j].price %></div>
-          </a>
-          <%// } %>
-        <%// } %>
-      <%// } %>
-    </section>
-  <%// } %>
-</p> -->
