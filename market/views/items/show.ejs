@@ -72,6 +72,10 @@
     <tbody>
       <% comments.forEach((comment) => { %>
         <tr>
+        
+          <td><%= comment.userId.name %></td>
+          <td><img src="<%=  comment.userId.avatar %>" alt="avatar"> </td>
+          
           <td><%= comment.comment %></td>
         </tr>
       <% }); %>
@@ -88,10 +92,7 @@
   action="/items/show/<%= item._id %>"
   method="POST"
   >
-  /////
-  <td><%= name="userId.name" %></td>
-  <td><%= name="userId.avatar" %></td>
-   /////
+ 
   <label>Comment:</label>
   <textarea name="comment"></textarea>
   <input type="submit" value="Add Comment">
