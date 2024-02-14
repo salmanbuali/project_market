@@ -21,15 +21,23 @@
           <div class="white-container">
             <a href='/items/show/<%= items[j]._id %>' id="item-div">
               <div><img src="<%= items[j].image %>" alt="item image" class="centered-image"></div>
+              <div class="text-container">
               <div class="item-font-main"><%= items[j].name %></div>
-              <div class="price-font-main"> BHD <%= items[j].price %></div>
-            </a>
-            <% if(user) { %>
-              <% if(user._id.equals(profile._id)){%>
-            <a href="/items/<%= items[j]._id %>/update" ><button class="update-btn"><i class="fi fi-br-edit"></i> UPDATE </button></a> 
-          </div>
+              <div class="price-font-main"><%= items[j].price %>
+              <span class="price-font-BHD ">BHD</span></div>
+
+
+              <!-- <a href="/items/<%= //items[j]._id %>/update" ><button class="update-btn"><i class="fi fi-br-edit"></i> UPDATE </button></a>  -->
+              <% if(user) { %>
+                <% if(user._id.equals(profile._id)){%>
+              <a href="/items/<%= items[j]._id %>/update" ><button class="update-btn"><i class="fi fi-br-edit"></i> UPDATE </button></a>
               <% } %>
-            <% } %>
+              <% } %>
+            </div>
+            </a> 
+          </div>
+
+       
           <% } %>
         <% } %>
        <% } %>

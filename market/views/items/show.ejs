@@ -61,37 +61,51 @@
 
 
 
-<br><br><h2></h2>
-<% if (comments.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>Comments</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% comments.forEach((comment) => { %>
+<div class="comment-section" id="add-comment-form" >
+  <h2></h2>
+
+  <% if (comments.length) { %>
+    <table class="comment-table">
+      <thead>
         <tr>
-          <td><%= comment.comment %></td>
+          <th>Comments</th>
         </tr>
-      <% }); %>
-    </tbody>
-  </table>
-<% } else { %>
-  <h5>No Comment Yet</h5>
-<% } %>
+      </thead>
+      <tbody>
+        <% comments.forEach((comment) => { %>
+          <tr>
+            <td>
+              <div class="avatar-comment">
+                <img src="<%= comment.userId.avatar %>" alt="avatar">
+              </div>
+              <div class="author-comment">
+                  <p><strong><%= comment.userId.name %>: </strong>  <span> <%= comment.comment %></span></p>
+                </div>
+                
+                
+               
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5 id="no-comment">No Comment Yet</h5>
+  <% } %>
+</div>
 
 
-
-
+<% if (user) { %>
 <form id="add-comment-form" 
   action="/items/show/<%= item._id %>"
   method="POST"
   >
+
   <label>Comment:</label>
   <textarea name="comment"></textarea>
   <input type="submit" value="Add Comment">
 </form>
+<% } %>
 </main>
 
 <%- include('../partials/footer') %>

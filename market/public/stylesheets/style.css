@@ -13,7 +13,9 @@
 @import url('https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
 
 body {
-  font: 14px 'Nunito Sans', sans-serif;
+  font: 14px 'avenir next', sans-serif;
+  /* background-color: red; */
+  /* height: 200px; */
 }
 
 #logo {
@@ -32,10 +34,13 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  border-radius: 15px;
+  border-radius: 0px;
   margin: 5px;
   height: 10vh;
+  margin-top: 0px;
+  margin-bottom: 50px;
 }
+
 
 #header > a:hover:not(.active) {
   color: white;
@@ -173,16 +178,18 @@ a {
 }
 
 .centered-image {
-  height: 180px;
-  width: 200px;
+  margin-top: 0;
+  height: 300px;
+  width: 300px;
   margin-bottom: 50px;
 }
 
 .white-container {
   width: 300px;
-  height: 378px;
+  height: 450px;
   background-color: white;
-  padding: 20px;
+  padding: 0px;
+  padding-bottom: 10px;
   text-align: center;
   background-color: white;
   background-repeat: no-repeat;
@@ -191,25 +198,86 @@ a {
   border-radius: 23px;
   border: 1px solid #dfdfdf;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.Index-white-container {
+  width: 300px;
+  height: 410px;
+  background-color: white;
+  padding: 0px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  border-radius: 23px;
+  border: 1px solid #dfdfdf;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
 }
 
 .white-container:hover {
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
 }
 
+.text-container {
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  opacity: 100%; 
+}
+
 .item-font-main {
-  font-weight: bold;
+ padding-top: 20px;
+margin-left:  15px;
+  font-weight: Medium;
   font-size: 20px;
   text-align: left;
-  padding-left: 10px;
+  padding-left: 20px;
   color: #10151d;
+  opacity: 100%; 
 }
 
 .price-font-main {
+  font-weight: Medium;
+  -webkit-text-stroke: 1px black;
+  font-size: 21px;
+  margin-left:  15px;
+  text-align: left;
+  padding-left: 20px;
+  color: black;
+}
+
+.price-font-BHD {
+  font-weight: Medium;
+  font-size: 14px;
+  -webkit-text-stroke: 1px black;
+  color: black;
+}
+
+.span-BHD {
   font-weight: bold;
   font-size: 20px;
   text-align: left;
-  padding-left: 10px;
+  padding-left: 20px;
+  color: black;
+}
+
+.price-font-BHD {
+  font-weight: Medium;
+  font-size: 14px;
+  -webkit-text-stroke: 1px black;
   color: black;
 }
 
@@ -291,13 +359,177 @@ a {
   gap: 10vw;
 }
 .update-btn {
-  border-radius: 20px;
-  height: 30px;
+ margin-top: 15px;
+  border-radius: 13px;
+  height: 35px;
   width: 170px;
   background-color: #10151d;
   color: white;
 }
-.input_label {
+
+
+/* form Styling  */
+#item-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px; 
+}
+
+#item-form-container div {
+  margin-bottom: 20px;
+}
+
+#item-form-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#item-form-container input[type="text"],
+#item-form-container input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  border-radius: 5px; 
+}
+
+#item-form-container button[type="submit"] {
+  background-color: #10151d;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px; 
+  border-radius: 15px; 
+}
+
+#item-form-container button[type="submit"]:hover {
+  background-color: #2d428f;
+}
+
+
+
+/* Styling for the comment form */
+#add-comment-form {
+  margin: 0 auto;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#add-comment-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+#add-comment-form textarea[name="comment"] {
+  width: 100%;
+  height: 100px;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+#add-comment-form input[type="submit"] {
+  background-color: #10151d;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+#add-comment-form input[type="submit"]:hover {
+  background-color: #2d428f;
+}
+
+
+
+
+   /*comments style*/
+   .comment-section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  
+  
+  .comment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .comment-table th {
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .comment-table td {
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+
+  .avatar-comment {
+    width: 40px;
+    height: 40px;
+    background-size:cover;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  .avatar-comment img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .comment {
+    margin-top: 5px;
+  }
+  
+  #no-comment {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .input_label {
   font-size: 0.75rem;
   color: #8b8e98;
   font-weight: 600;
