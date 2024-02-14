@@ -162,8 +162,8 @@ const changePricing = async (req, res) => {
 }
 
 const filter = async (req, res) => {
-  let filterVal = req.query.filterVal
-  if (filter) {
+  const filterVal = req.query.filterVal
+  if (!filterVal) {
     res.redirect('/items')
   }
   try {
