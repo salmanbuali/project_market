@@ -1,31 +1,29 @@
 <%- include('../partials/header') %>
-<div class="showItemContainer">
-  <img
-    class="itemShowImg"
-    src="<%= item.image %>"
-    alt="Item image"
-  />
-  <form action="/items/<%= item._id %>?_method=PUT" method="POST">
-    <p class="showItemName">
-      name : <input type="text" name="name" value="<%= item.name %>" >
-    </p>
-    <p class="showItemPrice"><i class="fi fi-bs-tags"></i> price : <input type="number" name="price" value="<%= item.price %>" > </p>
-    <p><i class="fi fi-sr-info"></i> description:</p>
-    <p class="showItemAbout">
-      <input type="textbox" name="desc" value="<%= item.desc %>" >
-    </p>
-    <p >
-      quantity <input type="number" name="qty" value="<%= item.qty %>" >
-    </p>
-    <p >
-      the picture of the item <input type="textbox" name="image" value="<%= item.image %>" >
-    </p>
-    <button type="submit" >update</button>
-  </form>
-   <!-- delete button -->
-   <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
-    <button type="submit">delete!</button>
+<div class="updateItemContainer">
+  <img class="update-form-img" src="<%= item.image %>" alt="Item image" />
+  <div id="update-form">
+    <form action="/items/<%= item._id %>?_method=PUT" method="POST">
+      <p>Name : <input type="text" name="name" value="<%= item.name %>" /></p>
+      <p>
+        Price :
+        <input type="number" name="price" value="<%= item.price %>" />
+      </p>
+      <p>Description:</p>
+      <p class="showItemAbout">
+        <input type="textbox" name="desc" value="<%= item.desc %>" />
+      </p>
+      <p>
+        Quantity: <input type="number" name="qty" value="<%= item.qty %>" />
+      </p>
+      <p>
+        Picture: <input type="textbox" name="image" value="<%= item.image %>" />
+      </p>
+      <button type="submit">Update</button>
     </form>
-    <!-- end of delete button  -->
+    <br />
+    <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+  </div>
 </div>
 <%- include('../partials/footer') %>
