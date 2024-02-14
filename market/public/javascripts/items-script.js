@@ -1,6 +1,6 @@
 const itemsSection = document.querySelector("section")
 const items = document.querySelector("section").querySelectorAll("a")
-
+console.log("nooo")
 const lowToHigh = () => {
   it = [...items]
   it.sort((a, b) => {
