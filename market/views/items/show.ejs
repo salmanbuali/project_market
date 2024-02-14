@@ -81,10 +81,16 @@
               <div class="author-comment">
                   <p><strong><%= comment.userId.name %>: </strong>  <span> <%= comment.comment %></span></p>
                 </div>
-                
-                
-               
             </td>
+            <% if(user) { %>
+              <% if(user._id.equals(comment.userId._id)){%>
+            <td>
+              <form style="float: left;" action="/items/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                <button style="float: left;" type="submit">delete!</button>
+                </form>
+                
+              </td>
+              <% }} %>
           </tr>
         <% }); %>
       </tbody>
