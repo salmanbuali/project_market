@@ -1,13 +1,23 @@
-<%- include('../partials/header') %> 
+<%- include('../partials/header') %>
 
 <form action="/items/:id" method="POST">
-<label >name: <input type="text" name="name"></label>
-<label >price: <input type="number" name="price"></label>
-<label >desc: <input type="text" name="desc"></label>
-<label >image: <input type="text" name="image"></label>
-<label >quantity: <input type="number" name="qty"></label>
-<br>
-<button type="submit">Add Item</button>
+    <label
+      >Name: <input type="text" name="name"
+    /></label>
+    <label 
+      >Price: <input type="number" name="price"
+    /></label>
+    <label 
+      >Desc: <input type="text" name="desc"
+    /></label>
+    <label>Image: <input type="text" name="image"
+    /></label>
+    <label>Quantity: <input type="number" name="qty"
+    /></label>
+    <br />
+    <button type="submit">
+        Add Item
+    </button>
 </form>
 
-<%- include('../partials/footer') %> 
+<%- include('../partials/footer') %>
