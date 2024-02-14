@@ -1,13 +1,31 @@
-<%- include('../partials/header') %> 
+<%- include('../partials/header') %>
 
 <form action="/items/:id" method="POST">
-<label >name: <input type="text" name="name"></label>
-<label >price: <input type="number" name="price"></label>
-<label >desc: <input type="text" name="desc"></label>
-<label >image: <input type="text" name="image"></label>
-<label >quantity: <input type="number" name="qty"></label>
-<br>
-<button type="submit">Add Item</button>
+  <div class="new-item-form">
+    <label class="input_label"
+      >Name: <input class="input_field" type="text" name="name"
+    /></label>
+    <label class="input_label"
+      >Price: <input class="input_field" type="number" name="price"
+    /></label>
+    <label class="input_label"
+      >Desc: <input class="input_field" type="text" name="desc"
+    /></label>
+    <label class="input_label"
+      >Image: <input class="input_field" type="text" name="image"
+    /></label>
+    <label class="input_label"
+      >Quantity: <input class="input_field" type="number" name="qty"
+    /></label>
+    <br />
+    <button class="pushable" type="submit">
+      <span class="shadow"></span>
+      <span class="edge"></span>
+      <span class="front">
+        Add Item
+      </span>
+    </button>
+  </div>
 </form>
 
-<%- include('../partials/footer') %> 
+<%- include('../partials/footer') %>
