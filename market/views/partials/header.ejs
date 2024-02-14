@@ -18,17 +18,22 @@
 
     <script src="javascripts/items-script.js" defer></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/boosted@5.2.3/dist/js/boosted.bundle.min.js" integrity="sha384-MANW37RG4MpFWPMCcNZBnvSobOkBpIGlbBkEzTtD4FbbOzJXbW8TddND1ak2lfsB" crossorigin="anonymous"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/boosted@5.2.3/dist/js/boosted.bundle.min.js"
+      integrity="sha384-MANW37RG4MpFWPMCcNZBnvSobOkBpIGlbBkEzTtD4FbbOzJXbW8TddND1ak2lfsB"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-
+    <div id="main">
     <nav id="header">
       <a href="/items"> <i class="fi fi-rs-shop" id="logo"></i> </a>
       <% if (user) { %>
-      <a href="/users/profile/<%= user._id %>">PROFILE</a>
-      <a href="/users/orders/<%= user._id %>">ORDERS</a>
-      <a href="/items/new">ADD AN ITEM</a>
-      <a href="/logout">LOG OUT</a>
+      <a href="/users/profile/<%= user._id %>"><i class="fi fi-bs-user"></i>&nbsp; PROFILE</a>
+      <a href="/users/orders/<%= user._id %>"><i class="fi fi-bs-list"></i>&nbsp; ORDERS</a>
+      <a href="/items/new"><i class="fi fi-rr-apps-add"></i>&nbsp; ADD AN ITEM</a>
+      <a href="/logout"><i class="fi fi-bs-exit"></i>&nbsp; LOG OUT</a>
       <% } else { %>
       <a href="/auth/google" class="login"
         >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
@@ -36,10 +41,13 @@
       <% } %>
     </nav>
 
-    <% if (typeof message !== 'undefined') { //typeof message!=='undefined' &&  %> 
-      <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <%= message %>
-      </div>
-      <% }%>
-
+    <% if (typeof message !== 'undefined') { //typeof message!=='undefined' &&
+    %>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';"
+        >&times;</span>
+      <%= message %>
+    </div>
+    <% }%>
+  </body>
+</html>

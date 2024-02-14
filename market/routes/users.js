@@ -9,6 +9,10 @@ router.get('/', function (req, res, next) {
 
 router.get('/profile/:id', usersCtrl.show)
 
+router.get('/orders/sold/:id', usersCtrl.showSold)
+
+router.get('/orders/purchased/:id', usersCtrl.showPurchased)
+
 router.get('/orders/:id', usersCtrl.showOrders)
 
 module.exports = router
