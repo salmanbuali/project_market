@@ -1,12 +1,29 @@
-const itemDiv = document.querySelectorAll("#white-container")
-let highToLow = 1
-/*addEventListener('click',()=> {
-  window.location.href = '/items/new'
-})*/
+const itemsSection = document.querySelector("section")
+const items = document.querySelector("section").querySelectorAll("a")
 
-const detail = () => {
-  console.log("gggggg: ")
-  // window.location.href =
+const lowToHigh = () => {
+  it = [...items]
+  it.sort((a, b) => {
+    aPrice = parseInt(a.querySelector(".price-font-main").textContent)
+    bPrice = parseInt(b.querySelector(".price-font-main").textContent)
+
+    return aPrice - bPrice
+  })
+  it.forEach((item) => {
+    itemsSection.appendChild(item)
+  })
 }
 
-const search = () => {}
+// highToLow
+const highToLow = () => {
+  it = [...items]
+  it.sort((b, a) => {
+    aPrice = parseInt(a.querySelector(".price-font-main").textContent)
+    bPrice = parseInt(b.querySelector(".price-font-main").textContent)
+
+    return aPrice - bPrice
+  })
+  it.forEach((item) => {
+    itemsSection.appendChild(item)
+  })
+}
