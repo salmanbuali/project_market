@@ -61,7 +61,7 @@
 
 
 
-<div class="comment-section">
+<div class="comment-section" id="add-comment-form" >
   <h2></h2>
 
   <% if (comments.length) { %>
@@ -78,10 +78,12 @@
               <div class="avatar">
                 <img src="<%= comment.userId.avatar %>" alt="avatar">
               </div>
-              <div class="author-comment"> <!-- Added -->
-                <p><strong><%= comment.userId.name %></strong></p>
-                <p><%= comment.comment %></p>
-              </div>
+              <div class="author-comment">
+                  <p><strong><%= comment.userId.name %>: </strong>  <span> <%= comment.comment %></span></p>
+                </div>
+                
+                
+               
             </td>
           </tr>
         <% }); %>

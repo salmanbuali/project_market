@@ -21,8 +21,9 @@ let comment = await Comment.create({
   itemId: req.params.id,
 })
 // console.log('this is the comment',comment)
-comment.save()
-res.render(`items/show`, {item, comment, comments})
+await comment.save()
+//res.render(`items/show`, {item, comment, comments})
+res.redirect(`/items/show/${item._id}`)
   }
   catch (err) {
     console.error(err);
