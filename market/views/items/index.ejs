@@ -5,10 +5,13 @@
       <% for (let j = 0; j < items.length ; j++) { %>
         <% if (j < items.length) { %>
           <% if (items[j].qty > 0) { %>
-          <a href='/items/show/<%= items[j]._id %>' class="white-container" id="item-div">
-            <div><img src="<%= items[j].image %>" alt="item image" class="centered-image"></div>
+          <a href='/items/show/<%= items[j]._id %>' class="Index-white-container" id="item-div">
+            <div ><img src="<%= items[j].image %>" alt="item image" class="centered-image"></div>
+            <div class="text-container">
             <div class="item-font-main"><%= items[j].name %></div>
-            <div class="price-font-main">BHD <%= items[j].price %></div>
+            <div class="price-font-main"> <%= items[j].price %> <dive class="price-font-BHD ">BHD</dive></div>
+            
+            </div>
           </a>
           <% } %>
         <% } %>

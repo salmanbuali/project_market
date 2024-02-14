@@ -9,7 +9,7 @@ const createComment = async (req, res) => {
   // console.log('body',req.body.comment)
   try {
     let item = await Item.findById(req.params.id).populate("seller")
-    const comments = await Comment.find({itemId: item._id})
+    const comments = await Comment.find({itemId: item._id}).populate("userId")
     // let item2 = await Item.findById(req.params.id)
     // console.log('without .populate',item2)
 // console.log('with',item)
@@ -22,7 +22,7 @@ let comment = await Comment.create({
 })
 // console.log('this is the comment',comment)
 comment.save()
-res.render(`items/show`, {item, comments})
+res.render(`items/show`, {item, comment, comments})
   }
   catch (err) {
     console.error(err);
