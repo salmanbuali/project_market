@@ -1,16 +1,19 @@
 <%-include('../partials/header') %> 
-
 <title>Store</title>
-<div >
-<form class="search-div" action="/items" method="get"><input class="search" name="value" type="text" placeholder="search">
+<div>
+<form class="search-div" action="/items" method="get">
+  <input class="search" name="value" type="text" placeholder="search">
   <button class="search search-button" type="submit">search</button>
+</form>
+<form action="/items/filter" class="search-div" method="get" >
+  <input class="search" type="text" name="filterVal" placeholder="price less than">
+  <button type="submit" class="search search-button">Filter</button>
 </form>
 <div class="search-div">
   <button class="search search-button" onclick="lowToHigh()">Low To High</button>
   <button class="search search-button" onclick="highToLow()">High To Low</button>
 </div>
 </div>
-
 
 <p >
     <section class="row">
@@ -20,7 +23,7 @@
           <a href='/items/show/<%= items[j]._id %>' class="white-container" id="item-div">
             <div><img src="<%= items[j].image %>" alt="item image" class="centered-image"></div>
             <div class="item-font-main"><%= items[j].name %></div>
-            <div class="price-font-main">BHD <%= items[j].price %></div>
+            <div class="span-BHD"><span class="span-BHD">BHD</span><span class="price-font-main"><%= items[j].price %></span></div>
           </a>
           <% } %>
         <% } %>
